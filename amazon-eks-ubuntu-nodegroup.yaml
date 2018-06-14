@@ -1,6 +1,6 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Amazon EKS - Node Group'
+Description: 'Amazon EKS - Ubuntu Node Group'
 
 Parameters:
 
@@ -278,6 +278,20 @@ Resources:
             Action:
             - ec2:DescribeTags
             Resource: "*"
+          - Effect: Allow
+            Action:
+              - 'cloudformation:SignalResource'
+            Resource:
+              !Join
+              - ':'
+              - - 'arn:aws:cloudformation'
+                - !Ref 'AWS::Region'
+                - !Ref 'AWS::AccountId'
+                - !Join
+                  - '/'
+                  - - 'stack'
+                    - !Ref 'AWS::StackName'
+                    - '*'
 
   NodeSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -348,6 +362,9 @@ Resources:
         PropagateAtLaunch: 'true'
       - Key: !Sub 'kubernetes.io/cluster/${ClusterName}'
         Value: 'owned'
+        PropagateAtLaunch: 'true'
+      - Key: 'com.ubuntu.cloud:eks:kubelet:max-pods-per-node'
+        Value: { "Fn::FindInMap": [ MaxPodsPerNode, { Ref: NodeInstanceType }, MaxPods ] }
         PropagateAtLaunch: 'true'
     UpdatePolicy:
       AutoScalingRollingUpdate:
