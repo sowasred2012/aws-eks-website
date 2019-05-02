@@ -32,7 +32,7 @@
         <div class="col-8">
           <h1 style="font-weight: 100">Ubuntu and Amazon Elastic Container Service for Kubernetes (EKS)</h1>
           <p>Canonical and Amazon have collaborated on the launch of <a href="https://aws.amazon.com/eks/">Amazon’s Elastic Container Service for Kubernetes (EKS)</a> to make Ubuntu worker nodes available. Amazon EKS is a fully managed service that makes it easy for you to use Kubernetes on AWS without having to be an expert in managing Kubernetes clusters.</p>
-          <p>Users should follow the <a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html">EKS user guide</a> for deploying an EKS cluster. <b> IMPORTANT: </b> When launching and configuring Worker Nodes, substitute the Ubuntu CloudFormation nodegroup template and specify the Ubuntu EKS worker node <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">Amazon Machine Image (AMI)</a> ID (see table below). The rest of the instructions remain the same.</p>
+          <p>Users should follow the <a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html">EKS user guide</a> for deploying an EKS cluster.</p>
         </div>
       </div>
     </section>
@@ -47,6 +47,8 @@
             <dd>Address snapd vulnerability <a href="https://usn.ubuntu.com/3887-1/">CVE-2019-7304</a></dd>
             <dt>20190424</dt>
             <dd>Ensure snaps do not auto-refresh</dd>
+            <dt>20190501</dt>
+            <dd>Add EKS AMI IDs for Kubernetes 1.11</dd>
           </dl>
         </div>
       </div>
@@ -54,105 +56,187 @@
     <section class="p-strip--light is-bordered is-shallow">
       <div class="row">
         <div class="col-12">
-          <p>The latest Ubuntu worker node AMIs (N.B. EKS may not be available in some of these regions, check the <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">list of current EKS regions</a>):</p>
+          <h3 class="p-card__title">Kubernetes 1.11</h3>
+          <p>The latest Ubuntu worker node AMIs for Kubernetes 1.11 (N.B. EKS may not be available in some of these regions, check the <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">list of current EKS regions</a>):</p>
+          <p><b>Important:</b> EKS images that support Kubernetes 1.11 use the default <a href="https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-02-11/amazon-eks-nodegroup.yaml">amazon-eks-nodegroup.yaml</a>, as specified in the <a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html">AWS EKS user guide</a>.</p>
           <table>
             <thead>
               <tr>
                 <th>Region</th>
                 <th>Image</th>
-                <th>CloudFormation Node template</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
+                <td>ami-dd89f1ac (<a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
+                <td>ami-08571a371e99d16bc (<a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
+                <td>ami-024369038fac3d3bf (<a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
+                <td>ami-0ad375bfefcda41e3 (<a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Mumbai) (ap-south-1)</td>
+                <td>ami-06d300307ee968a3c (<a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
+                <td>ami-060df7efd2045b0dc (<a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
+                <td>ami-08c74ba020f30bcf8 (<a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>Canada (Central) (ca-central-1)</td>
+                <td>ami-000fbb2b1d519ba58 (<a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>EU (Frankfurt) (eu-central-1)</td>
+                <td>ami-0dc87e0d3876c7dfc (<a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>EU (Stockholm) (eu-north-1)</td>
+                <td>ami-aaac24d4 (<a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>EU (Ireland) (eu-west-1)</td>
+                <td>ami-0055f00c7fc6f76a0 (<a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>EU (London) (eu-west-2)</td>
+                <td>ami-0906513248dc9c33d (<a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>EU (Paris) (eu-west-3)</td>
+                <td>ami-0753b4449989f8822 (<a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>South America (São Paulo) (sa-east-1)</td>
+                <td>ami-00219874b61fbe88d (<a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>US East (Virginia) (us-east-1)</td>
+                <td>ami-0c86a0fdfb21f93ea (<a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>US East (Ohio) (us-east-2)</td>
+                <td>ami-0df856802bf3631aa (<a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>US West (N. California) (us-west-1)</td>
+                <td>ami-00d27e403681b6c5b (<a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+              <tr>
+                <td>US West (Oregon) (us-west-2)</td>
+                <td>ami-0e668061012ab9eef (<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <p><small>This image is customized specifically for the EKS service and is not intended as a general OS image.</small></p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="p-strip--light is-bordered is-shallow">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="p-card__title">Kubernetes 1.10</h3>
+          <p>The latest Ubuntu worker node AMIs for Kubernetes 1.10 (N.B. EKS may not be available in some of these regions, check the <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">list of current EKS regions</a>):</p>
+          <p>Users should follow the <a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html">EKS user guide</a> for deploying an EKS cluster.</p>
+          <p><b> IMPORTANT: </b> When launching and configuring Worker Nodes, substitute the Ubuntu <a href="amazon-eks-ubuntu-nodegroup.yaml">CloudFormation nodegroup template</a> and specify the Ubuntu EKS worker node <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">Amazon Machine Image (AMI)</a> ID (see table below). The rest of the instructions remain the same.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Region</th>
+                <th>Image</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
                 <td>ami-649ce415 (<a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
                 <td>ami-0f313a844db8a8876 (<a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
                 <td>ami-03e653d5822dc9082 (<a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
                 <td>ami-049d4590d6be72188 (<a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Mumbai) (ap-south-1)</td>
                 <td>ami-0514a1232dd6e50db (<a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
                 <td>ami-0fed89df951a600aa (<a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
                 <td>ami-039a52bccf47db062 (<a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>Canada (Central) (ca-central-1)</td>
                 <td>ami-0357362cf87df25b2 (<a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>EU (Frankfurt) (eu-central-1)</td>
                 <td>ami-0f487fd32a368c0db (<a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>EU (Stockholm) (eu-north-1)</td>
                 <td>ami-6f830b11 (<a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>EU (Ireland) (eu-west-1)</td>
                 <td>ami-0c37416901748a955 (<a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>EU (London) (eu-west-2)</td>
                 <td>ami-01ac37273e195641a (<a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>EU (Paris) (eu-west-3)</td>
                 <td>ami-016dffbf66ac44ab2 (<a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>South America (São Paulo) (sa-east-1)</td>
                 <td>ami-0c503a27e0b46a357 (<a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>US East (Virginia) (us-east-1)</td>
                 <td>ami-0528122378918889b (<a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>US East (Ohio) (us-east-2)</td>
                 <td>ami-0e35b51f21b90a63c (<a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>US West (N. California) (us-west-1)</td>
                 <td>ami-087b4dba41649001c (<a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
               <tr>
                 <td>US West (Oregon) (us-west-2)</td>
                 <td>ami-007c0437f70213640 (<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-                <td><a href="amazon-eks-ubuntu-nodegroup.yaml">amazon-eks-ubuntu-nodegroup.yaml</a></td>
               </tr>
             </tbody>
           </table>
@@ -168,7 +252,7 @@
     <section class="p-strip is-bordered">
       <div class="row">
         <div class="col-8">
-          <h2>How to customize set up</h2>
+          <h2>How to customize set up for 1.10 images</h2>
           <p>Customization is done during first boot and is driven by the script <code>/var/lib/cloud/scripts/per-instance/00-EKS-config.sh</code>. This is executed by cloud-init and output can be seen in <code>/var/lib/cloud-init-output.sh</code>. The script will determine the cluster to join based on the instance tag <code>“Key=kubernetes.io/cluster/&lt;cluster_name&gt;, Value=owned"</code> which should be associated with the instance from the autoscaling group. See the sample CloudFormation template in this same directory named amazon-eks-ubuntu-nodegroup.yaml.</p>
           <p>Any user-data passed to the instance will run after the in-image configuration (<code>/var/lib/cloud/scripts/per-instance/00-EKS-config.sh</code>). If you need to override the in-image configuration entirely you may use cloud-init’s <a href="http://cloudinit.readthedocs.io/en/latest/topics/examples.html#run-commands-on-first-boot">runcmd</a> to delete the in-image configuration and use cloud-init’s <a href="http://cloudinit.readthedocs.io/en/latest/topics/examples.html#writing-out-arbitrary-files">write_files</a> to substitute your own configuration script in the same directory.</p>
           <h3>Customization example</h3>
