@@ -55,6 +55,8 @@
             <dd>Address CVE-2019-11477 and CVE-2019-11478 CVEs collectively known as SACK Panic. Add EKS AMI IDs for Kubernetes 1.12</dd>
             <dt>20190628</dt>
             <dd>Address remote denial of service (resource exhaustion) caused by TCP SACK scoreboard manipulation <a href="https://launchpad.net/bugs/1831638">LP: #1831638</a></dd>
+            <dt>20190730</dt>
+            <dd>Remove 1.10 images as part of Kubernetes 1.10 deprecation</dd>
           </dl>
         </div>
       </div>
@@ -250,127 +252,6 @@
       <div class="row">
         <div class="col-8">
           <p><small>This image is customized specifically for the EKS service and is not intended as a general OS image.</small></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="p-strip--light is-bordered is-shallow">
-      <div class="row">
-        <div class="col-12">
-          <h3 class="p-card__title">Kubernetes 1.10</h3>
-          <p>The latest Ubuntu worker node AMIs for Kubernetes 1.10 (N.B. EKS may not be available in some of these regions, check the <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">list of current EKS regions</a>):</p>
-          <p>Users should follow the <a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html">EKS user guide</a> for deploying an EKS cluster.</p>
-          <p><b> IMPORTANT: </b> When launching and configuring Worker Nodes, substitute the Ubuntu <a href="amazon-eks-ubuntu-nodegroup.yaml">CloudFormation nodegroup template</a> and specify the Ubuntu EKS worker node <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">Amazon Machine Image (AMI)</a> ID (see table below). The rest of the instructions remain the same.</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Region</th>
-                <th>Image</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
-                <td>ami-906d16e1 (<a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
-                <td>ami-0802c68e79d9e377d (<a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
-                <td>ami-02895a902393d64ed (<a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
-                <td>ami-0e5ae9526d3cb21e8 (<a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Mumbai) (ap-south-1)</td>
-                <td>ami-06716a90894333227 (<a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
-                <td>ami-08b0c39523f52495a (<a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
-                <td>ami-039d74cdd29a4de1a (<a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>Canada (Central) (ca-central-1)</td>
-                <td>ami-062fd2f5e53da1590 (<a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>EU (Frankfurt) (eu-central-1)</td>
-                <td>ami-03f01e67d5a0f47d8 (<a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>EU (Stockholm) (eu-north-1)</td>
-                <td>ami-2cd55e52 (<a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>EU (Ireland) (eu-west-1)</td>
-                <td>ami-0cb74e856bb42d19a (<a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>EU (London) (eu-west-2)</td>
-                <td>ami-04b12d6bdc4dece5f (<a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>EU (Paris) (eu-west-3)</td>
-                <td>ami-03c39bc1985346dff (<a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>South America (São Paulo) (sa-east-1)</td>
-                <td>ami-024df29cd08b15bd3 (<a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>US East (Virginia) (us-east-1)</td>
-                <td>ami-0471ad1d407d24ddb (<a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>US East (Ohio) (us-east-2)</td>
-                <td>ami-01bb069ab63b48724 (<a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>US West (N. California) (us-west-1)</td>
-                <td>ami-0f814ceff02882a0c (<a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-              <tr>
-                <td>US West (Oregon) (us-west-2)</td>
-                <td>ami-009188694d7411c64 (<a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">or later</a>)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-8">
-          <p><small>This image is customized specifically for the EKS service and is not intended as a general OS image.</small></p>
-        </div>
-      </div>
-    </section>
-    <section class="p-strip is-bordered">
-      <div class="row">
-        <div class="col-8">
-          <h2>How to customize set up for 1.10 images</h2>
-          <p>Customization is done during first boot and is driven by the script <code>/var/lib/cloud/scripts/per-instance/00-EKS-config.sh</code>. This is executed by cloud-init and output can be seen in <code>/var/lib/cloud-init-output.sh</code>. The script will determine the cluster to join based on the instance tag <code>“Key=kubernetes.io/cluster/&lt;cluster_name&gt;, Value=owned"</code> which should be associated with the instance from the autoscaling group. See the sample CloudFormation template in this same directory named amazon-eks-ubuntu-nodegroup.yaml.</p>
-          <p>Any user-data passed to the instance will run after the in-image configuration (<code>/var/lib/cloud/scripts/per-instance/00-EKS-config.sh</code>). If you need to override the in-image configuration entirely you may use cloud-init’s <a href="http://cloudinit.readthedocs.io/en/latest/topics/examples.html#run-commands-on-first-boot">runcmd</a> to delete the in-image configuration and use cloud-init’s <a href="http://cloudinit.readthedocs.io/en/latest/topics/examples.html#writing-out-arbitrary-files">write_files</a> to substitute your own configuration script in the same directory.</p>
-          <h3>Customization example</h3>
-          <p>Here we have a customization example with complete replacement of the setup script. The ‘runcmd’ stanza would be omitted if the goal is to augment the existing setup rather than replace it entirely. The following would be added to the CloudFormation nodegroup template in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-general.html#scenario-userdata-base64">instance userdata property</a>:</p>
-          <pre><code>#cloud-config
-# Remove the built-in customization if you want/need to replace it completely
-runcmd:
-  - [ cloud-init-per, once, rm, -f, /var/lib/cloud/scripts/per-instance/00-EKS-config.sh ]
-# Add your own customization
-write_files:
-- path: /var/lib/cloud/scripts/per-instance/01-EKS-custom.sh
-  permissions: 755
-  owner: root:root
-  content: |
-      #!/bin/bash -eux
-      ## Custom EKS setup likely using 00-EKS-config.sh as a guide</code></pre>
         </div>
       </div>
     </section>
