@@ -118,18 +118,7 @@
       <section class="p-strip--light is-shallow">
         <div class="row">
           <div class="col-12">
-            <h3 class="p-card__title">Show worker node images for: 
-            <span class="p-contextual-menu--left p-heading--four" style="vertical-align: middle;">
-              <button href="#" class="p-contextual-menu__toggle u-no-margin--bottom" aria-controls="#kubernetes-version-menu" aria-expanded="false" aria-haspopup="true">Kubernetes version</button>
-              
-              <span class="p-contextual-menu__dropdown" id="kubernetes-version-menu" aria-hidden="true" aria-label="submenu">
-                <span class="p-contextual-menu__group">
-                  <a href="#" aria-controls="#kubernetes-1-12" data-js="toggle" class="p-contextual-menu__link">1.12</a>
-                  <a href="#" aria-controls="#kubernetes-1-11" data-js="toggle" class="p-contextual-menu__link">1.11</a>
-                  <a href="#" aria-controls="#kubernetes-1-10" data-js="toggle" class="p-contextual-menu__link">1.10</a>
-                </span>
-              </span>
-            </span>
+            <h3 class="u-no-margin--bottom">Show worker node images for: Kubernetes <a href="#" aria-controls="#kubernetes-1-12" data-js="toggle">1.12</a>, <a href="#" aria-controls="#kubernetes-1-11" data-js="toggle">1.11</a>, <a href="#" aria-controls="#kubernetes-1-10" data-js="toggle">1.10</a>
             </h3>
           </div>  
         </div>
@@ -569,53 +558,6 @@
       }
 
       setupAccordionListener('.p-accordion__list');
-    </script>
-
-    <script>
-      function toggleMenu(element, show) {
-        element.setAttribute('aria-expanded', show);
-        document
-          .querySelector(element.getAttribute('aria-controls'))
-          .setAttribute('aria-hidden', !show);
-      }
-
-      function setupContextualMenuListeners(contextualMenuToggleSelector) {
-        const toggles = document.querySelectorAll(contextualMenuToggleSelector);
-
-        toggles.forEach(toggle => {
-          toggle.addEventListener('click', e => {
-            e.preventDefault();
-
-            const target = e.target;
-            const menuAlreadyOpen = target.getAttribute('aria-expanded') === 'true';
-
-            toggleMenu(target, !menuAlreadyOpen)
-          });
-        });
-
-        document.addEventListener('click', e => {
-          toggles.forEach(toggle => {
-            const contextualMenu = document.querySelector(toggle.getAttribute('aria-controls'));
-            const clickOutside = !(toggle.contains(e.target) || contextualMenu.contains(e.target));
-
-            if (clickOutside) {
-              toggleMenu(toggle, false);
-            }
-          })
-        });
-
-        document.onkeydown = e => {
-          e = e || window.event;
-
-          if (e.keyCode === 27) {
-            toggles.forEach(toggle => {
-              toggleMenu(toggle, false);
-            });
-          }
-        };
-      }
-
-      setupContextualMenuListeners('.p-contextual-menu__toggle');
     </script>
 
     <script>    
