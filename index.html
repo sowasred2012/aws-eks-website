@@ -15,6 +15,44 @@
     <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.1.0.min.css">
 
     <style>
+      .p-accordion__panel {
+        padding-left: 0;
+      }
+
+      .p-accordion__tab {
+        color: #007aa6;
+        font-size: 18px;
+        padding-left: 0;
+        width: auto;
+      }
+
+      .p-accordion__tab i {
+        margin-left: 0.5rem;
+      }
+
+      .p-accordion__tab[aria-expanded="false"],
+      .p-accordion__tab[aria-expanded="true"] {
+        background-image: none;
+      }
+
+      .p-accordion__tab[aria-expanded="false"] i {
+        background-position: 0% 75%;
+      }
+
+      .p-accordion__tab[aria-expanded="true"] i {
+        background-position: 0% 25%;
+        transform: rotate(180deg);
+      }
+
+      .p-accordion__tab:hover {  
+        text-decoration: underline;
+      }
+
+      .p-accordion__tab:active:hover,
+      .p-accordion__tab:hover {
+        background-color: transparent;
+      }
+
       .p-inline-list {
         display: inline;
       }
@@ -98,7 +136,7 @@
             <div class="p-accordion" role="tablist" aria-multiselect="true">
               <ul class="p-accordion__list u-no-margin--bottom">
                 <li class="p-accordion__group">
-                  <button type="button" class="p-accordion__tab p-heading--four" id="tab1" role="tab" aria-controls="#tab1-section" aria-expanded="false">Previous changes</button>
+                  <button type="button" class="p-accordion__tab p-heading--four" id="tab1" role="tab" aria-controls="#tab1-section" aria-expanded="false">Previous changes<i class="p-icon--contextual-menu"></i></button>
 
                   <section class="p-accordion__panel" id="tab1-section" role="tabpanel" aria-hidden="true" aria-labelledby="tab1-section">
                     <dl>
