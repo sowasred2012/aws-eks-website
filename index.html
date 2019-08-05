@@ -15,12 +15,21 @@
     <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.1.0.min.css">
 
     <style>
-      [data-js="toggle-target"] {
+      .p-inline-list {
+        display: inline;
+      }
+
+      .p-tab[aria-hidden="true"] {
         display: none;
       }
 
-      [data-js="toggle-target"][aria-expanded="true"] {
-        display: block;
+      .p-tab-selector[aria-selected="false"] {
+        color: #007aa6;
+        cursor: pointer;
+      }
+
+      .p-inline-list__item {
+        margin-right: 0;
       }
     </style>
   </head>
@@ -118,13 +127,18 @@
       <section class="p-strip--light is-shallow">
         <div class="row">
           <div class="col-12">
-            <h3 class="u-no-margin--bottom">Show worker node images for: Kubernetes <a href="#" aria-controls="#kubernetes-1-12" data-js="toggle">1.12</a>, <a href="#" aria-controls="#kubernetes-1-11" data-js="toggle">1.11</a>, <a href="#" aria-controls="#kubernetes-1-10" data-js="toggle">1.10</a>
+            <h3 class="u-no-margin--bottom">Show worker node images for: Kubernetes
+              <ul class="p-inline-list" data-js="tablist" role="tablist">
+                <li class="p-inline-list__item p-tab-selector" id="tab1" role="tab" aria-controls="#kubernetes-1-12" aria-selected="true">1.12,</li>
+                <li class="p-inline-list__item p-tab-selector" id="tab2" role="tab" aria-controls="#kubernetes-1-11" aria-selected="false">1.11,</li>
+                <li class="p-inline-list__item p-tab-selector" id="tab3" role="tab" aria-controls="#kubernetes-1-10" aria-selected="false">1.10</li>
+              </ul>
             </h3>
           </div>  
         </div>
       </section>
 
-      <div data-js="toggle-target" id="kubernetes-1-12">
+      <div class="p-tab" role="tabpanel" aria-labelledby="tab1" id="kubernetes-1-12" aria-hidden="false">
         <section class="p-strip--light is-bordered is-shallow">
           <div class="row">
             <div class="col-12">
@@ -251,7 +265,7 @@
       </div>
 >>>>>>> add wip dropdown to toggle kubernetes image lists
 
-      <div data-js="toggle-target" id="kubernetes-1-11">
+      <div class="p-tab" role="tabpanel" aria-labelledby="tab2" id="kubernetes-1-11" aria-hidden="true">
         <section class="p-strip--light is-bordered is-shallow">
           <div class="row">
             <div class="col-12">
@@ -368,7 +382,7 @@
         </section>
       </div>
 
-      <div data-js="toggle-target" id="kubernetes-1-10">
+      <div class="p-tab" role="tabpanel" aria-labelledby="tab3" id="kubernetes-1-10" aria-hidden="true">
         <section class="p-strip--light is-bordered is-shallow">
           <div class="row">
             <div class="col-12">
@@ -561,32 +575,44 @@
     </script>
 
     <script>    
-      function setupToggles(toggleSelector) {
-        const toggles = document.querySelectorAll(toggleSelector)
-        
-        const hideSiblings = () => {
-          document
-            .querySelectorAll('[data-js="toggle-target"]')
-            .forEach(element => {
-              element.setAttribute('aria-expanded', false)
+      function setupTabs(tablistSelector) {
+        const tablists = document.querySelectorAll(tablistSelector)
+
+        const attachTabEvents = (tabs) => {
+          tabs.forEach(tab => {
+            tab.addEventListener('click', e => {
+              hideSibingTabs(tabs, e);
+              toggleTab(tab, true);
             });
+          });
         }
 
-        toggles.forEach(element => {
-          element.addEventListener('click', e => {
-            const targetID = e.target.getAttribute('aria-controls');
-            
-            e.preventDefault();
-            hideSiblings();
-
-            document
-              .querySelector(targetID)
-              .setAttribute('aria-expanded', true);
+        const hideSibingTabs = (tabs, event) => {
+          tabs.forEach(tab => {
+            if (event.target !== tab) {
+              toggleTab(tab, false);
+            }
           });
+        }
+
+        const toggleTab = (tab, show) => {
+          const targetID = tab.getAttribute('aria-controls');
+
+          tab.setAttribute('aria-selected', show);
+
+          document
+            .querySelector(targetID)
+            .setAttribute('aria-hidden', !show);
+        }
+
+        tablists.forEach(tablist => {
+          const tabs = tablist.querySelectorAll('[role="tab"]');
+
+          attachTabEvents(tabs);
         });
       }
 
-      setupToggles('[data-js="toggle"]');
+      setupTabs('[data-js="tablist"]');
     </script>
   </body>
 </html>
