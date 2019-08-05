@@ -15,19 +15,6 @@
     <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-2.1.0.min.css">
 
     <style>
-      .p-navigation a,
-      .p-navigation a:visited,
-      .p-navigation a:focus {
-        align-items: center;
-        color: #e95420;
-        font-size: 1.7rem;
-        font-weight: 200;
-      }
-
-      .p-navigation svg {
-        margin-right: 0.5rem;
-      }
-
       .p-accordion__panel {
         padding-left: 0;
       }
@@ -66,8 +53,43 @@
         background-color: transparent;
       }
 
+      .p-code-copyable {
+        background: none;
+        border: 0;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+      }
+
+      .p-code-copyable::before {
+        content: none;
+      }
+
+      .p-code-copyable__action {
+        border: 1px solid #cdcdcd;
+        padding: 4px 0;
+        top: -7px;
+      }
+
       .p-inline-list {
         display: inline;
+      }
+
+      .p-inline-list__item {
+        margin-right: 0;
+      }
+
+      .p-navigation a,
+      .p-navigation a:visited,
+      .p-navigation a:focus {
+        align-items: center;
+        color: #e95420;
+        font-size: 1.7rem;
+        font-weight: 200;
+      }
+
+      .p-navigation svg {
+        margin-right: 0.5rem;
       }
 
       .p-tab[aria-hidden="true"] {
@@ -79,8 +101,9 @@
         cursor: pointer;
       }
 
-      .p-inline-list__item {
-        margin-right: 0;
+      td {
+        padding-bottom: .7rem;
+        padding-top: calc(1rem - 1px);
       }
     </style>
   </head>
@@ -211,92 +234,200 @@
                   <tr>
                     <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
                     <td></td>
-                    <td><a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-68631819</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-68631819</a>
+                        <input hidden class="p-code-copyable__input" value="ami-68631819" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
                     <td></td>
-                    <td><a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00d8bd06833bd20ae</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00d8bd06833bd20ae</a>
+                        <input hidden class="p-code-copyable__input" value="ami-00d8bd06833bd20ae" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
                     <td></td>
-                    <td><a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-01e7ab7cbd7f13972</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-01e7ab7cbd7f13972</a>
+                        <input hidden class="p-code-copyable__input" value="ami-01e7ab7cbd7f13972" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
                     <td></td>
-                    <td><a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07d2fb7e6dea4472f</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07d2fb7e6dea4472f</a>
+                        <input hidden class="p-code-copyable__input" value="ami-07d2fb7e6dea4472f" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Mumbai) (ap-south-1)</td>
                     <td></td>
-                    <td><a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0618730e80e790739</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0618730e80e790739</a>
+                        <input hidden class="p-code-copyable__input" value="ami-0618730e80e790739" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
                     <td></td>
-                    <td><a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-01168bce413d4be53</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-01168bce413d4be53</a>
+                        <input hidden class="p-code-copyable__input" value="ami-01168bce413d4be53" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
                     <td></td>
-                    <td><a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-04377a3c7e37becb8</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-04377a3c7e37becb8</a>
+                        <input hidden class="p-code-copyable__input" value="ami-04377a3c7e37becb8" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Canada (Central) (ca-central-1)</td>
                     <td></td>
-                    <td><a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00190abe0098ffd4b</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00190abe0098ffd4b</a>
+                        <input hidden class="p-code-copyable__input" value="ami-00190abe0098ffd4b" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>EU (Frankfurt) (eu-central-1)</td>
                     <td></td>
-                    <td><a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00a91197f921a229e</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-00a91197f921a229e</a>
+                        <input hidden class="p-code-copyable__input" value="ami-00a91197f921a229e" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>EU (Stockholm) (eu-north-1)</td>
                     <td></td>
-                    <td><a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-77d45f09</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-77d45f09</a>
+                        <input hidden class="p-code-copyable__input" value="ami-77d45f09" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>EU (Ireland) (eu-west-1)</td>
                     <td></td>
-                    <td><a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07b83013f6e5cedf6</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07b83013f6e5cedf6</a>
+                        <input hidden class="p-code-copyable__input" value="ami-07b83013f6e5cedf6" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>EU (London) (eu-west-2)</td>
                     <td></td>
-                    <td><a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0d0f4fcdc5039b796</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0d0f4fcdc5039b796</a>
+                        <input hidden class="p-code-copyable__input" value="ami-0d0f4fcdc5039b796" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>EU (Paris) (eu-west-3)</td>
                     <td></td>
-                    <td><a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-09d0adc6c9e510dea</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-09d0adc6c9e510dea</a>
+                        <input hidden class="p-code-copyable__input" value="ami-09d0adc6c9e510dea" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>South America (São Paulo) (sa-east-1)</td>
                     <td></td>
-                    <td><a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-024f401a421c1ae44</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-024f401a421c1ae44</a>
+                        <input hidden class="p-code-copyable__input" value="ami-024f401a421c1ae44" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>US East (Virginia) (us-east-1)</td>
                     <td></td>
-                    <td><a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0629da185ca8e4e42</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0629da185ca8e4e42</a>
+                        <input hidden class="p-code-copyable__input" value="ami-0629da185ca8e4e42" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>US East (Ohio) (us-east-2)</td>
                     <td></td>
-                    <td><a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c0e2af39a486901a</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c0e2af39a486901a</a>
+                        <input hidden class="p-code-copyable__input" value="ami-0c0e2af39a486901a" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>US West (N. California) (us-west-1)</td>
                     <td></td>
-                    <td><a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-023deb704351374bf</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-023deb704351374bf</a>
+                        <input hidden class="p-code-copyable__input" value="ami-023deb704351374bf" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>US West (Oregon) (us-west-2)</td>
                     <td></td>
-                    <td><a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07d8b42a5f4c623f1</a></td>
+                    <td>
+                      <div class="p-code-copyable">
+                        <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.12/images/*;ownerAlias=099720109477;sort=desc:name">ami-07d8b42a5f4c623f1</a>
+                        <input hidden class="p-code-copyable__input" value="ami-07d8b42a5f4c623f1" readonly="readonly">
+                        <button class="p-code-copyable__action">Copy to clipboard</button>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -338,92 +469,200 @@
               <tr>
                 <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
                 <td></td>
-                <td><a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-eb63189a</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-eb63189a</a>
+                    <input hidden class="p-code-copyable__input" value="ami-eb63189a" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
                 <td></td>
-                <td><a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-002fd7cb71635b4b3</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-002fd7cb71635b4b3</a>
+                    <input hidden class="p-code-copyable__input" value="ami-002fd7cb71635b4b3" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
                 <td></td>
-                <td><a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-03f64f65bb79fa67f</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-03f64f65bb79fa67f</a>
+                    <input hidden class="p-code-copyable__input" value="ami-03f64f65bb79fa67f" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
                 <td></td>
-                <td><a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-083a64972f86bf4ba</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-083a64972f86bf4ba</a>
+                    <input hidden class="p-code-copyable__input" value="ami-083a64972f86bf4ba" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Mumbai) (ap-south-1)</td>
                 <td></td>
-                <td><a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-09b07ab6bdd6c6433</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-09b07ab6bdd6c6433</a>
+                    <input hidden class="p-code-copyable__input" value="ami-09b07ab6bdd6c6433" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
                 <td></td>
-                <td><a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-07b5e146fef893830</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-07b5e146fef893830</a>
+                    <input hidden class="p-code-copyable__input" value="ami-07b5e146fef893830" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
                 <td></td>
-                <td><a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-015afe45bd3518c35</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-015afe45bd3518c35</a>
+                    <input hidden class="p-code-copyable__input" value="ami-015afe45bd3518c35" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Canada (Central) (ca-central-1)</td>
                 <td></td>
-                <td><a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c3f9daa982dfbbfa</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c3f9daa982dfbbfa</a>
+                    <input hidden class="p-code-copyable__input" value="ami-0c3f9daa982dfbbfa" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>EU (Frankfurt) (eu-central-1)</td>
                 <td></td>
-                <td><a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-039f9b464fd1b7532</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-039f9b464fd1b7532</a>
+                    <input hidden class="p-code-copyable__input" value="ami-039f9b464fd1b7532" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>EU (Stockholm) (eu-north-1)</td>
                 <td></td>
-                <td><a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-acd55ed2</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-acd55ed2</a>
+                    <input hidden class="p-code-copyable__input" value="ami-acd55ed2" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>EU (Ireland) (eu-west-1)</td>
                 <td></td>
-                <td><a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-045925f6a7401587b</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-045925f6a7401587b</a>
+                    <input hidden class="p-code-copyable__input" value="ami-045925f6a7401587b" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>EU (London) (eu-west-2)</td>
                 <td></td>
-                <td><a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-08d6206948ba39d9e</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-08d6206948ba39d9e</a>
+                    <input hidden class="p-code-copyable__input" value="ami-08d6206948ba39d9e" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>EU (Paris) (eu-west-3)</td>
                 <td></td>
-                <td><a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-040aefd5787d9c2e2</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-040aefd5787d9c2e2</a>
+                    <input hidden class="p-code-copyable__input" value="ami-040aefd5787d9c2e2" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>South America (São Paulo) (sa-east-1)</td>
                 <td></td>
-                <td><a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-04b9d1caa033606e3</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-04b9d1caa033606e3</a>
+                    <input hidden class="p-code-copyable__input" value="ami-04b9d1caa033606e3" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>US East (Virginia) (us-east-1)</td>
                 <td></td>
-                <td><a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-081b49b6a7837a01b</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-081b49b6a7837a01b</a>
+                    <input hidden class="p-code-copyable__input" value="ami-081b49b6a7837a01b" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>US East (Ohio) (us-east-2)</td>
                 <td></td>
-                <td><a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-073a1732ca17ed3ab</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-073a1732ca17ed3ab</a>
+                    <input hidden class="p-code-copyable__input" value="ami-073a1732ca17ed3ab" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>US West (N. California) (us-west-1)</td>
                 <td></td>
-                <td><a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-08f506aa75649ce2b</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-08f506aa75649ce2b</a>
+                    <input hidden class="p-code-copyable__input" value="ami-08f506aa75649ce2b" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>US West (Oregon) (us-west-2)</td>
                 <td></td>
-                <td><a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c5febddf2149f5f4</a></td>
+                <td>
+                  <div class="p-code-copyable">
+                    <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.11/images/*;ownerAlias=099720109477;sort=desc:name">ami-0c5febddf2149f5f4</a>
+                    <input hidden class="p-code-copyable__input" value="ami-0c5febddf2149f5f4" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                  </div>
+                </td>
               </tr>
             </tbody>
               </table>
@@ -456,92 +695,200 @@
             <tr>
               <td>Asia Pacific (Hong Kong) (ap-east-1)</td>
               <td></td>
-              <td><a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-906d16e1</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-east-1.console.aws.amazon.com/ec2/v2/home?region=ap-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-906d16e1</a>
+                  <input hidden class="p-code-copyable__input" value="ami-906d16e1" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Tokyo) (ap-northeast-1)</td>
               <td></td>
-              <td><a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0802c68e79d9e377d</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0802c68e79d9e377d</a>
+                  <input hidden class="p-code-copyable__input" value="ami-0802c68e79d9e377d" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Seoul) (ap-northeast-2)</td>
               <td></td>
-              <td><a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-02895a902393d64ed</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-02895a902393d64ed</a>
+                  <input hidden class="p-code-copyable__input" value="ami-02895a902393d64ed" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Osaka-Local) (ap-northeast-3)</td>
               <td></td>
-              <td><a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0e5ae9526d3cb21e8</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-northeast-3.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0e5ae9526d3cb21e8</a>
+                  <input hidden class="p-code-copyable__input" value="ami-0e5ae9526d3cb21e8" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Mumbai) (ap-south-1)</td>
               <td></td>
-              <td><a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-06716a90894333227</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-06716a90894333227</a>
+                  <input hidden class="p-code-copyable__input" value="ami-06716a90894333227" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Singapore) (ap-southeast-1)</td>
               <td></td>
-              <td><a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-08b0c39523f52495a</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-southeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-08b0c39523f52495a</a>
+                  <input hidden class="p-code-copyable__input" value="ami-08b0c39523f52495a" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Asia Pacific (Sydney) (ap-southeast-2)</td>
               <td></td>
-              <td><a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-039d74cdd29a4de1a</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ap-southeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-southeast-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-039d74cdd29a4de1a</a>
+                  <input hidden class="p-code-copyable__input" value="ami-039d74cdd29a4de1a" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Canada (Central) (ca-central-1)</td>
               <td></td>
-              <td><a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-062fd2f5e53da1590</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://ca-central-1.console.aws.amazon.com/ec2/v2/home?region=ca-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-062fd2f5e53da1590</a>
+                  <input hidden class="p-code-copyable__input" value="ami-062fd2f5e53da1590" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>EU (Frankfurt) (eu-central-1)</td>
               <td></td>
-              <td><a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-03f01e67d5a0f47d8</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-03f01e67d5a0f47d8</a>
+                  <input hidden class="p-code-copyable__input" value="ami-03f01e67d5a0f47d8" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>EU (Stockholm) (eu-north-1)</td>
               <td></td>
-              <td><a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-2cd55e52</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://eu-north-1.console.aws.amazon.com/ec2/v2/home?region=eu-north-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-2cd55e52</a>
+                  <input hidden class="p-code-copyable__input" value="ami-2cd55e52" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>EU (Ireland) (eu-west-1)</td>
               <td></td>
-              <td><a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0cb74e856bb42d19a</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0cb74e856bb42d19a</a>
+                  <input hidden class="p-code-copyable__input" value="ami-0cb74e856bb42d19a" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>EU (London) (eu-west-2)</td>
               <td></td>
-              <td><a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-04b12d6bdc4dece5f</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-04b12d6bdc4dece5f</a>
+                  <input hidden class="p-code-copyable__input" value="ami-04b12d6bdc4dece5f" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>EU (Paris) (eu-west-3)</td>
               <td></td>
-              <td><a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-03c39bc1985346dff</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://eu-west-3.console.aws.amazon.com/ec2/v2/home?region=eu-west-3#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-03c39bc1985346dff</a>
+                  <input hidden class="p-code-copyable__input" value="ami-03c39bc1985346dff" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>South America (São Paulo) (sa-east-1)</td>
               <td></td>
-              <td><a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-024df29cd08b15bd3</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://sa-east-1.console.aws.amazon.com/ec2/v2/home?region=sa-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-024df29cd08b15bd3</a>
+                  <input hidden class="p-code-copyable__input" value="ami-024df29cd08b15bd3" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>US East (Virginia) (us-east-1)</td>
               <td></td>
-              <td><a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0471ad1d407d24ddb</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0471ad1d407d24ddb</a>
+                  <input hidden class="p-code-copyable__input" value="ami-0471ad1d407d24ddb" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>US East (Ohio) (us-east-2)</td>
               <td></td>
-              <td><a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-01bb069ab63b48724</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-01bb069ab63b48724</a>
+                  <input hidden class="p-code-copyable__input" value="ami-01bb069ab63b48724" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>US West (N. California) (us-west-1)</td>
               <td></td>
-              <td><a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0f814ceff02882a0c</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-0f814ceff02882a0c</a>
+                  <input hidden class="p-code-copyable__input" value="ami-0f814ceff02882a0c" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>US West (Oregon) (us-west-2)</td>
               <td></td>
-              <td><a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-009188694d7411c64</a></td>
+              <td>
+                <div class="p-code-copyable">
+                  <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Images:visibility=public-images;name=ubuntu-eks/k8s_1.10/images/*;ownerAlias=099720109477;sort=desc:name">ami-009188694d7411c64</a>
+                  <input hidden class="p-code-copyable__input" value="ami-009188694d7411c64" readonly="readonly">
+                    <button class="p-code-copyable__action">Copy to clipboard</button>
+                </div>
+              </td>
             </tr>
           </tbody>
               </table>
@@ -665,6 +1012,44 @@
       }
 
       setupTabs('[data-js="tablist"]');
+    </script>
+
+    <script>
+      const copyToClipboard = str => {
+        const el = document.createElement('textarea'); // Create a <textarea> element
+        el.value = str; // Set its value to the string that you want copied
+        el.setAttribute('readonly', ''); // Make it readonly to be tamper-proof
+        el.style.position = 'absolute';
+        el.style.left = '-9999px'; // Move outside the screen to make it invisible
+        document.body.appendChild(el); // Append the <textarea> element to the HTML document
+        const selected =
+          document.getSelection().rangeCount > 0 // Check if there is any content selected previously
+            ? document.getSelection().getRangeAt(0) // Store selection if found
+            : false; // Mark as false to know no selection existed before
+        el.select(); // Select the <textarea> content
+        document.execCommand('copy'); // Copy - only works as a result of a user action (e.g. click events)
+        document.body.removeChild(el); // Remove the <textarea> element
+        if (selected) {
+          // If a selection existed before copying
+          document.getSelection().removeAllRanges(); // Unselect everything on the HTML document
+          document.getSelection().addRange(selected); // Restore the original selection
+        }
+      };
+
+      var codeCopyableActions = document.querySelectorAll(
+        '.p-code-copyable__action'
+      );
+
+      for (var codeCopyableAction of codeCopyableActions) {
+        codeCopyableAction.addEventListener(
+          'click',
+          function(e) {
+            const clipboardValue = this.previousSibling.previousSibling.value;
+            copyToClipboard(clipboardValue);
+          },
+          false
+        );
+      }
     </script>
   </body>
 </html>
